@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculadora</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="principal-div">
+      <h1>
+        <center>
+          Calculadora de Resistencia de 3 bandas
+          <button class="btn-alerta" id="myBtn">
+            <i><img src="./recursos/pregunta.png" /></i>
+          </button>
+        </center>
+      </h1>
+      <div class="resistencia">
+        <img
+          src="./recursos/Codigo-de-color-resistencia.png"
+          alt="resistencia.png"
+        />
+        <div id="banda_1_1" class="color-box banda-1"></div>
+        <div id="banda_1_2" class="color-box banda-2"></div>
+        <div id="banda_1_mul" class="color-box banda-3"></div>
+      </div>
+      <center><h3 id="valorResistencia">Valor:</h3></center>
+
+      <div class="selectores">
+        <label for="banda1">Banda 1:</label>
+        <select id="banda1">
+          <option value="0">Negro</option>
+          <option value="1">Marrón</option>
+          <option value="2">Rojo</option>
+          <option value="3">Naranja</option>
+          <option value="4">Amarillo</option>
+          <option value="5">Verde</option>
+          <option value="6">Azul</option>
+          <option value="7">Violeta</option>
+          <option value="8">Gris</option>
+          <option value="9">Blanco</option>
+        </select>
+
+        <label for="banda2">Banda 2:</label>
+        <select id="banda2">
+          <option value="0">Negro</option>
+          <option value="1">Marrón</option>
+          <option value="2">Rojo</option>
+          <option value="3">Naranja</option>
+          <option value="4">Amarillo</option>
+          <option value="5">Verde</option>
+          <option value="6">Azul</option>
+          <option value="7">Violeta</option>
+          <option value="8">Gris</option>
+          <option value="9">Blanco</option>
+        </select>
+
+        <label for="multiplicador">Multiplicador:</label>
+        <select id="multiplicador">
+          <option value="1">Negro</option>
+          <option value="10">Marrón</option>
+          <option value="100">Rojo</option>
+          <option value="1000">Naranja</option>
+          <option value="10000">Amarillo</option>
+          <option value="100000">Verde</option>
+          <option value="1000000">Azul</option>
+          <option value="10000000">Violeta</option>
+          <option value="0.1">Dorado</option>
+          <option value="0.01">Plateado</option>
+        </select>
+      </div>
+
+      <center>
+        <button
+          class="btn"
+          onclick="calcularResistencia()"
+          class="slide-fwd-center"
+        >
+          Calcular
+        </button>
+      </center>
+      <hr />
+      <h1>
+        <center>
+          Calculadora de Resistencia de 4 bandas
+          <button class="btn-alerta" id="myBtn1">
+            <i><img src="./recursos/pregunta.png" /></i>
+          </button>
+        </center>
+      </h1>
+
+      <div class="resistencia">
+        <img
+          src="./recursos/Codigo-de-color-resistencia.png"
+          alt="resistencia.png"
+        />
+        <div id="banda_2_1" class="color-box banda-1"></div>
+        <div id="banda_2_2" class="color-box banda-2"></div>
+        <div id="banda_2_mul" class="color-box banda-3"></div>
+        <div id="banda_tolerancia" class="color-box tolerancia"></div>
+      </div>
+
+      <center><h3 id="valorResistencia_2">Valor:</h3></center>
+
+      <div class="selectores">
+        <label for="banda1_2">Banda 1:</label>
+        <select id="banda1_2">
+          <option value="0">Negro</option>
+          <option value="1">Marrón</option>
+          <option value="2">Rojo</option>
+          <option value="3">Naranja</option>
+          <option value="4">Amarillo</option>
+          <option value="5">Verde</option>
+          <option value="6">Azul</option>
+          <option value="7">Violeta</option>
+          <option value="8">Gris</option>
+          <option value="9">Blanco</option>
+        </select>
+
+        <label for="banda2_2">Banda 2:</label>
+        <select id="banda2_2">
+          <option value="0">Negro</option>
+          <option value="1">Marrón</option>
+          <option value="2">Rojo</option>
+          <option value="3">Naranja</option>
+          <option value="4">Amarillo</option>
+          <option value="5">Verde</option>
+          <option value="6">Azul</option>
+          <option value="7">Violeta</option>
+          <option value="8">Gris</option>
+          <option value="9">Blanco</option>
+        </select>
+
+        <label for="multiplicador_2">Multiplicador:</label>
+        <select id="multiplicador_2">
+          <option value="1">Negro</option>
+          <option value="10">Marrón</option>
+          <option value="100">Rojo</option>
+          <option value="1000">Naranja</option>
+          <option value="10000">Amarillo</option>
+          <option value="100000">Verde</option>
+          <option value="1000000">Azul</option>
+          <option value="10000000">Violeta</option>
+          <option value="100000000">Gris</option>
+          <option value="1000000000">Blanco</option>
+          <option value="0.1">Dorado</option>
+          <option value="0.01">Plateado</option>
+        </select>
+
+        <label for="tolerancia">Tolerancia:</label>
+        <select id="tolerancia">
+          <option value="+/- 1%">Marrón</option>
+          <option value="+/- 2%">Rojo</option>
+          <option value="+/- 5%">Dorado</option>
+          <option value="+/- 10%">Plateado</option>
+        </select>
+      </div>
+
+      <center>
+        <button class="btn" onclick="calcularResistencia2()">Calcular</button>
+      </center>
+      <hr />
+      <h1>
+        <center>
+          Calculadora de Resistencia de 5 bandas
+          <button class="btn-alerta" id="myBtn2">
+            <i><img src="./recursos/pregunta.png" /></i>
+          </button>
+        </center>
+      </h1>
+
+      <div class="resistencia">
+        <img
+          src="./recursos/Codigo-de-color-resistencia.png"
+          alt="resistencia.png"
+        />
+        <div id="banda_3_1" class="color-box banda-1"></div>
+        <div id="banda_3_2" class="color-box banda-2"></div>
+        <div id="banda_3_3" class="color-box banda-3"></div>
+        <div id="banda_3_mul" class="color-box banda-4"></div>
+        <div id="banda_tolerancia_2" class="color-box tolerancia"></div>
+      </div>
+
+      <center><h3 id="valorResistencia_3">Valor:</h3></center>
+
+      <div class="selectores">
+        <label for="banda1_3">Banda 1:</label>
+        <select id="banda1_3">
+          <option value="0">Negro</option>
+          <option value="1">Marrón</option>
+          <option value="2">Rojo</option>
+          <option value="3">Naranja</option>
+          <option value="4">Amarillo</option>
+          <option value="5">Verde</option>
+          <option value="6">Azul</option>
+          <option value="7">Violeta</option>
+          <option value="8">Gris</option>
+          <option value="9">Blanco</option>
+        </select>
+
+        <label for="banda2_3">Banda 2:</label>
+        <select id="banda2_3">
+          <option value="0">Negro</option>
+          <option value="1">Marrón</option>
+          <option value="2">Rojo</option>
+          <option value="3">Naranja</option>
+          <option value="4">Amarillo</option>
+          <option value="5">Verde</option>
+          <option value="6">Azul</option>
+          <option value="7">Violeta</option>
+          <option value="8">Gris</option>
+          <option value="9">Blanco</option>
+        </select>
+
+        <label for="banda3_3">Banda 3:</label>
+        <select id="banda3_3">
+          <option value="0">Negro</option>
+          <option value="1">Marrón</option>
+          <option value="2">Rojo</option>
+          <option value="3">Naranja</option>
+          <option value="4">Amarillo</option>
+          <option value="5">Verde</option>
+          <option value="6">Azul</option>
+          <option value="7">Violeta</option>
+          <option value="8">Gris</option>
+          <option value="9">Blanco</option>
+        </select>
+
+        <label for="multiplicador_3">Multiplicador:</label>
+        <select id="multiplicador_3">
+          <option value="1">Negro</option>
+          <option value="10">Marrón</option>
+          <option value="100">Rojo</option>
+          <option value="1000">Naranja</option>
+          <option value="10000">Amarillo</option>
+          <option value="100000">Verde</option>
+          <option value="1000000">Azul</option>
+          <option value="10000000">Violeta</option>
+          <option value="100000000">Gris</option>
+          <option value="1000000000">Blanco</option>
+          <option value="0.1">Dorado</option>
+          <option value="0.01">Plateado</option>
+        </select>
+
+        <label for="tolerancia_2">Tolerancia:</label>
+        <select id="tolerancia_2">
+          <option value="+/- 1%">Marrón</option>
+          <option value="+/- 2%">Rojo</option>
+          <option value="+/- 0.5%">Verde</option>
+          <option value="+/- 0.25%">Azul</option>
+          <option value="+/- 0.10%">Violeta</option>
+          <option value="+/- 0.05%">Gris</option>
+          <option value="+/- 5%">Dorado</option>
+          <option value="+/- 10%">Plateado</option>
+        </select>
+      </div>
+
+      <center>
+        <button class="btn" onclick="calcularResistencia3()">Calcular</button>
+      </center>
+
+      <hr />
+
+      <h1><center>Medición de Forma Manual</center></h1>
+
+      <div class="div-downloads">
+        <div class="mini-div">
+          <h4>Resistencias de 3 bandas</h4>
+          <a
+            href="./recursos/Codigo-de-colores-de-resistencias-de-tres-bandas.jpg"
+            download="Resistencia de 3 bandas"
+            >Descargar</a
+          >
+        </div>
+
+        <div class="mini-div">
+          <h4>Resistencias de 4 bandas</h4>
+          <a
+            href="./recursos/Codigo-de-colores-de-resistencias-de-cuatro-bandas.jpg"
+            download="resistencia de 4 bandas"
+            >Descargar</a
+          >
+        </div>
+
+        <div class="mini-div">
+          <h4>Resistencias de 5 bandas</h4>
+          <a
+            href="./recursos/Codigo-de-resistencia-de-5-bandas.png"
+            download="resistencia de 5 bandas"
+            >Descargar</a
+          >
+        </div>
+      </div>
+
+      <center><h6>Made by Facundo Dartwig</h6></center>
+    </div>
+
+    <!--Alerta personalizada para mostrar una imagen-->>
+    <div id="myModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <img
+          src="./recursos/RESISTENCIAS-COMERCIALES.png"
+          alt="Imagen de alerta"
+        />
+        <p>
+          Naturalmente debes comprar la resistencia que más se acerque al valor
+          deseado.
+        </p>
+      </div>
+    </div>
+
+    <script src="./resistencias.js"></script>
+    <script src="./script.js"></script>
+  </body>
+</html>
